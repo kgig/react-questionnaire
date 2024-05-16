@@ -36,6 +36,10 @@ const MainComponent: React.FC = () => {
         }
     ]
     useEffect(() => {
+        
+    }, []);
+    const submitAnswer = async () => {
+        console.log(questions)
         const correctAnswersCount = questions.reduce((count, question) => {
             if (question.answerSubmit === question.correctAnswerIndex) {
                 return count + 1;
@@ -43,9 +47,6 @@ const MainComponent: React.FC = () => {
             return count;
         }, 0);
         setScore(correctAnswersCount)
-    }, []);
-    const submitAnswer = async () => {
-        console.log(questions)
     }
 
     return (
